@@ -2,7 +2,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { colorPalette } from "./colorPalette";
-import { cn } from "@/components/Aceternity/utils";
+import { cn } from "./utils";
 
 export const BackgroundBeamsWithCollision = ({ children, className }) => {
   const containerRef = useRef(null);

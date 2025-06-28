@@ -1,4 +1,4 @@
-import { Inter, Libre_Baskerville } from "next/font/google";
+import { Inter, Libre_Baskerville, Fira_Code } from "next/font/google";
 
 export const inter = Inter({
   subsets: ["latin"],
@@ -6,6 +6,11 @@ export const inter = Inter({
 });
 
 export const libre = Libre_Baskerville({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+});
+
+export const fira = Fira_Code({
   subsets: ["latin"],
   weight: ["400", "700"],
 });

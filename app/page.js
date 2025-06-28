@@ -17,7 +17,7 @@ export default function Home() {
       </div>
 
       <div className="flex-grow flex flex-col justify-center items-center text-center px-5">
-        <h1 className={`text-3xl font-bold text-white ${libre.className}`}>
+        <h1 className={`text-3xl font-bold text-[#EEEEEE] ${libre.className}`}>
           <ColourfulText text="Game Developer and UX Designer" />
         </h1>
         <p className="text-[#EEEEEE]">BSc Creative Computing Graduate</p>
@@ -28,7 +28,7 @@ export default function Home() {
           href="https://www.facebook.com/CarlT.16"
           target="_blank"
           rel="noopener noreferrer"
-          className="hover:text-[#1877F2]"
+          className="hover:text-[#1877F2] transition-colors duration-200 ease-in"
         >
           <GrFacebookOption />
         </Link>
@@ -37,7 +37,7 @@ export default function Home() {
           href="https://www.instagram.com/tobleronewithfriedchicken/"
           target="_blank"
           rel="noopener noreferrer"
-          className="hover:text-[#E1306C]"
+          className="hover:text-[#E1306C] transition-colors duration-200 ease-in"
         >
           <GrInstagram />
         </Link>
@@ -46,7 +46,7 @@ export default function Home() {
           href="https://www.linkedin.com/in/carl-amir-tobias-4a73b32b1/"
           target="_blank"
           rel="noopener noreferrer"
-          className="hover:text-[#0072B1]"
+          className="hover:text-[#0072B1] transition-colors duration-200 ease-in"
         >
           <GrLinkedinOption />
         </Link>
