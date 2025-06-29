@@ -1,4 +1,5 @@
 "use client";
+import { useEffect } from "react";
 import { libre } from "@/app/fonts";
 import { BackgroundBeamsWithCollision } from "@/components/Aceternity/backgroundBeams";
 import { ColourfulText } from "@/components/Aceternity/colorfulText";
@@ -10,8 +11,26 @@ import {
 } from "react-icons/gr";
 
 export default function Home() {
+  useEffect(() => {
+    // Save original styles to restore on unmount
+    const html = document.documentElement;
+    const body = document.body;
+    const originalHtmlBg = html.style.background;
+    const originalBodyBg = body.style.background;
+
+    html.style.background = "transparent";
+    body.style.background = "transparent";
+
+    return () => {
+      html.style.background = originalHtmlBg;
+      body.style.background = originalBodyBg;
+    };
+  }, []);
+
   return (
-    <div className="relative w-full h-screen flex flex-col overflow-hidden">
+    <div
+      className="relative w-full h-screen flex flex-col overflow-hidden bg-transparent"
+    >
       <div className="absolute inset-0 -z-10">
         <BackgroundBeamsWithCollision />
       </div>

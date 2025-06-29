@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
-/* * {
-  font-family: Inter;
-} */
+html,
+body {
+  @apply bg-gradient-to-b from-white to-neutral-100 dark:from-neutral-950 dark:to-neutral-800;
+}
+
+body.home-page {
+  background: transparent !important;
+}
