@@ -5,6 +5,10 @@ body {
   @apply bg-gradient-to-b from-white to-neutral-100 dark:from-neutral-950 dark:to-neutral-800;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body.home-page {
   background: transparent !important;
 }

@@ -12,7 +12,6 @@ import {
 
 export default function Home() {
   useEffect(() => {
-    // Save original styles to restore on unmount
     const html = document.documentElement;
     const body = document.body;
     const originalHtmlBg = html.style.background;
@@ -26,11 +25,10 @@ export default function Home() {
       body.style.background = originalBodyBg;
     };
   }, []);
+  
 
   return (
-    <div
-      className="relative w-full h-screen flex flex-col overflow-hidden bg-transparent"
-    >
+    <div className="relative w-full h-screen flex flex-col overflow-hidden bg-transparent">
       <div className="absolute inset-0 -z-10">
         <BackgroundBeamsWithCollision />
       </div>
@@ -73,3 +71,9 @@ export default function Home() {
     </div>
   );
 }
+
+
+
+
+
+
