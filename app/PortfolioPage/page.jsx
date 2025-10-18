@@ -1,5 +1,4 @@
 "use client";
-import { useState, useRef, useEffect } from "react";
 import { MacbookScroll } from "@/components/Aceternity/macbookScroll";
 import { TabletScroll } from "@/components/Aceternity/tabletScroll";
 import { libre, pacifico, monts, league } from "@/app/fonts";
@@ -26,8 +25,8 @@ export default function PortfolioPage() {
   );
 
   return (
-    <main className="flex flex-col h-full overflow-y-auto pt-14 items-center">
-      <div className="relative w-full h-screen flex items-center justify-center">
+    <main className="flex flex-col h-full overflow-y-auto items-center">
+      <div className="relative w-full h-[100vh] flex items-center justify-center">
         <div className="flex flex-col w-full h-full justify-center items-center text-center px-4">
           <h1 className={`text-4xl md:text-5xl lg:text-6xl ${libre.className}`}>
             Case
@@ -322,7 +321,7 @@ export default function PortfolioPage() {
 
           <div className="flex flex-col gap-3 lg:gap-4 mt-4 lg:mt-0">
             <p className="text-justify text-xl lg:text-2xl xl:text-4xl font-semibold">
-              he project strengthened my ability to translate client feedback
+              This project strengthened my ability to translate client feedback
               into clear design and technical outcomes.
             </p>
             <p className="text-justify text-base lg:text-lg xl:text-2xl">

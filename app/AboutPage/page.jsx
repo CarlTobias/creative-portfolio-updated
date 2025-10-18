@@ -5,7 +5,6 @@ import {
   DraggableCardContainer,
 } from "@/components/Aceternity/draggableCard";
 import Image from "next/image";
-import Link from "next/link";
 
 export default function About() {
   const items = [
