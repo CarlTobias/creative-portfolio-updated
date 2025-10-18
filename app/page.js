@@ -33,11 +33,11 @@ export default function Home() {
         <BackgroundBeamsWithCollision />
       </div>
 
-      <div className="flex-grow flex flex-col justify-center items-center text-center px-5">
-        <h1 className={`text-3xl font-bold text-[#EEEEEE] ${libre.className}`}>
+      <div className="flex-grow flex flex-col justify-center items-center text-center md:gap-1 xl:gap-3">
+        <h1 className={`md:text-3xl xl:text-5xl font-bold text-[#EEEEEE] ${libre.className}`}>
           <ColourfulText text="Game Developer and UX Designer" />
         </h1>
-        <p className="text-[#EEEEEE]">BSc Creative Computing Graduate</p>
+        <p className="md:text-xl xl:text-3xl text-[#EEEEEE]">BSc Creative Computing Graduate</p>
       </div>
 
       <div className="w-full flex justify-end items-end gap-5 text-[#EEEEEE] text-3xl pb-5 px-5">

@@ -52,7 +52,6 @@ export const DraggableCardBody = ({ className, children }) => {
   );
 
   useEffect(() => {
-    // Update constraints when component mounts or window resizes
     const updateConstraints = () => {
       if (typeof window !== "undefined") {
         setConstraints({
@@ -66,10 +65,8 @@ export const DraggableCardBody = ({ className, children }) => {
 
     updateConstraints();
 
-    // Add resize listener
     window.addEventListener("resize", updateConstraints);
 
-    // Clean up
     return () => {
       window.removeEventListener("resize", updateConstraints);
     };
@@ -156,7 +153,11 @@ export const DraggableCardBody = ({ className, children }) => {
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       className={cn(
-        "relative min-h-96 w-80 overflow-hidden rounded-md bg-neutral-100 p-6 shadow-2xl transform-3d dark:bg-neutral-900",
+        "relative overflow-hidden rounded-md bg-neutral-100 shadow-2xl transform-3d dark:bg-neutral-900",
+        "min-h-64 w-48 p-4",
+        "md:min-h-72 md:w-56 md:p-5",
+        "lg:min-h-80 lg:w-60 lg:p-6",
+        "xl:min-h-96 xl:w-80 xl:p-6",
         className
       )}
     >
