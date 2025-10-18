@@ -1,71 +1,42 @@
 "use client";
 import { useState, useRef, useEffect } from "react";
 import { MacbookScroll } from "@/components/Aceternity/macbookScroll";
-import { libre } from "@/app/fonts";
+import { TabletScroll } from "@/components/Aceternity/tabletScroll";
+import { libre, pacifico, monts, league } from "@/app/fonts";
 
 export default function PortfolioPage() {
-  const wooflesImages = [
-    "/assets/images/woofles/wooflesHome.png",
-    "/assets/images/woofles/wooflesLogin.png",
-    "/assets/images/woofles/wooflesProfile.png",
-    "/assets/images/woofles/wooflesEditProfile.png",
-    "/assets/images/woofles/wooflesSettings.png",
-  ];
+  const tabletTitle = (
+    <div className="flex flex-col gap-3">
+      <h1 className="text-4xl font-semibold text-black dark:text-white">
+        Web Redesign
+      </h1>
+      <h1
+        className={`${league.className} text-3xl md:text-[5rem] font-bold mt-1 leading-none`}
+      >
+        Pinoy Travels & Tourism
+      </h1>
+    </div>
+  );
 
-  const pinoyTnTImages = [
-    "/assets/images/pinoytnt/pinoytnt1.png",
-    "/assets/images/pinoytnt/pinoytnt2.png",
-    "/assets/images/pinoytnt/pinoytnt3.png",
-    "/assets/images/pinoytnt/pinoytnt4.png",
-    "/assets/images/pinoytnt/pinoytnt5.png",
-    "/assets/images/pinoytnt/pinoytnt6.png",
-    "/assets/images/pinoytnt/pinoytnt7.png",
-    "/assets/images/pinoytnt/pinoytnt8.png",
-    "/assets/images/pinoytnt/pinoytnt9.png",
-    "/assets/images/pinoytnt/pinoytnt10.png",
-  ];
-
-  const [wooflesIndex, setWooflesIndex] = useState(0);
-  const [pinoyTnTIndex, setPinoyTnTIndex] = useState(0);
-
-  useEffect(() => {
-    const wooflesInterval = setInterval(() => {
-      setWooflesIndex((prev) => (prev + 1) % wooflesImages.length);
-    }, 5000);
-
-    const pinoyTnTInterval = setInterval(() => {
-      setPinoyTnTIndex((prev) => (prev + 1) % pinoyTnTImages.length);
-    }, 5000);
-
-    return () => {
-      clearInterval(wooflesInterval);
-      clearInterval(pinoyTnTInterval);
-    };
-  }, []);
-
-  const currentWooflesImage = wooflesImages[wooflesIndex];
-  const currentPinoyTnTImage = pinoyTnTImages[pinoyTnTIndex];
+  const tabletContent = (
+    <img
+      src="/assets/images/pinoyTnT/pinoyTnTPages.png"
+      className="h-full w-full object-cover"
+    />
+  );
 
   return (
-    <main className="flex flex-col h-full overflow-y-auto pt-14">
+    <main className="flex flex-col h-full overflow-y-auto pt-14 items-center">
       <div className="relative w-full h-screen flex items-center justify-center">
-        <div className="flex flex-col w-full h-full justify-center items-center mb-20">
-          <h1 className="text-3xl font-bold">Selected Works</h1>
-          <p className="text-lg">
-            Projects that I've worked on from 2022 - Now
+        <div className="flex flex-col w-full h-full justify-center items-center">
+          <h1 className={`text-6xl ${libre.className}`}>Case</h1>
+          <p className="text-7xl font-bold">
+            Studies
           </p>
         </div>
       </div>
-
       <div className="min-h-screen flex flex-col gap-10 items-center justify-center bg-transparent px-4 py-10">
-        {/* <div className="flex flex-col gap-1 w-full px-20">
-          <h3 className={`text-xl text-[#EEEEEE] ${libre.className}`}>
-            Woofles
-          </h3>
-          <h2 className="text-2xl font-bold">Pet Social Media Website</h2>
-        </div> */}
-
-        <div className="relative w-full h-[300vh]">
+        <div className="relative w-full h-[225vh]">
           <MacbookScroll
             src="/assets/images/woofles/wooflesSignUp.png"
             showGradient={false}
@@ -84,129 +55,219 @@ export default function PortfolioPage() {
         </div>
       </div>
 
-      <div className="flex gap-10 w-full px-20">
-        <div className="flex flex-col flex-1/3 gap-3">
-          <h2 className="text-2xl font-bold">Challenge / Problem</h2>
-          <p className="text-justify">
-            Social media is flooded with pet content, but there isn’t a
-            dedicated space just for animals. I wanted to design and build a
-            platform where pet owners could share photos, videos, and connect
-            through pet communities, events, and festivals — without worrying
-            about overposting.
-          </p>
+      <div className="flex flex-col gap-50 w-[90vw]">
+        <div className="flex flex-col gap-10 w-full h-[100vh] justify-center">
+          <div className="flex gap-5 justify-start items-center">
+            <h1 className={`text-9xl text-[#EEEEEE] ${libre.className}`}>01</h1>
+            <h1 className={`text-9xl text-[#EEEEEE]`}>The Problem</h1>
+          </div>
+
+          <div className="flex flex-col gap-3">
+            <p className="text-justify text-4xl font-semibold">
+              Social media is flooded with pet content, but there isn’t a lot of
+              platforms that dedicate a space just for animals.
+            </p>
+            <p className="text-justify text-2xl">
+              I wanted to design and build a platform where pet owners could
+              share photos, videos, and connect through pet communities, events,
+              and festivals — without worrying about overposting.
+            </p>
+          </div>
         </div>
 
-        <div className="flex flex-col flex-1/3 gap-3">
-          <h2 className="text-2xl font-bold">My Role</h2>
-          <p className="text-justify">
-            I was responsible for the full development of the website. This
-            included planning the platform’s features, building both front-end
-            and back-end, and integrating tools for state management and media
-            handling.
-          </p>
+        <div className="flex flex-col gap-10 w-full h-[100vh] justify-center">
+          <div className="flex gap-5 justify-start items-center">
+            <h1 className={`text-9xl text-[#EEEEEE] ${libre.className}`}>02</h1>
+            <h1 className={`text-9xl text-[#EEEEEE]`}>The Creative</h1>
+          </div>
+
+          <div className="flex flex-col gap-3">
+            <p className="text-justify text-4xl font-semibold">
+              A warm and welcoming visual identity that blends playful character
+              with modern simplicity.
+            </p>
+            <p className="text-justify text-2xl">
+              Warm neutrals, bright accents, and friendly typefaces build a
+              cozy, pet-centered visual experience. Every element was designed
+              to feel inviting and playful, reflecting the joyful bond between
+              pets and their owners.
+            </p>
+          </div>
+
+          <div className="flex justify-evenly items-center mt-10">
+            <img
+              src="/assets/images/woofles/wooflesColorScheme.png"
+              className="w-2xl rounded-2xl"
+            />
+            <div className="flex flex-col gap-10 items-center">
+              <p className={`text-9xl ${pacifico.className}`}>Pacifico</p>
+              <p className={`text-6xl ${monts.className}`}>Montserrat</p>
+            </div>
+          </div>
         </div>
 
-        <div className="flex flex-col flex-1/3 gap-3">
-          <h2 className="text-2xl font-bold">Process</h2>
-          <p className="text-justify">
-            -Chose the MERN stack as the foundation.
-          </p>
-          <p className="text-justify">
-            -Implemented Zustand for efficient state management.
-          </p>
-          <p className="text-justify">
-            -Integrated Cloudinary for smooth image and video uploads.
-          </p>
-          <p className="text-justify">
-            -Encountered (and solved) many challenges along the way. From
-            database structuring to managing media storage, it taught me a lot
-            about handling real-world development hurdles.
-          </p>
+        <div className="flex flex-col gap-10 w-full">
+          <div className="flex gap-5 justify-start items-center">
+            <h1 className={`text-9xl text-[#EEEEEE] ${libre.className}`}>03</h1>
+            <h1 className={`text-9xl text-[#EEEEEE]`}>The Technical</h1>
+          </div>
+
+          <div className="flex flex-col gap-3">
+            <p className="text-justify text-4xl font-semibold">
+              The platform works with the use of the MERN tech stack along with
+              libraries like Zustand and Cloudinary.
+            </p>
+            <p className="text-justify text-2xl">
+              To create a social media platform, the technical part needs to
+              deal with a number of things such as account creation and access,
+              photo/video uploads, information storage, etc.
+            </p>
+          </div>
+
+          <div className="flex flex-col justify-evenly items-center mt-10">
+            <img
+              src="/assets/images/woofles/wooflesMERN.png"
+              className="w-full"
+            />
+            <div className="flex justify-center items-center mt-10">
+              <img
+                src="/assets/images/woofles/wooflesZustand.png"
+                className="w-xl"
+              />
+              <img
+                src="/assets/images/woofles/wooflesCloudinary.png"
+                className="w-md"
+              />
+            </div>
+          </div>
         </div>
 
-        <div className="flex flex-col flex-1/3 gap-3">
-          <h2 className="text-2xl font-bold">Result</h2>
-          <p className="text-justify">
-            Woofles became my first fully functioning website, complete with
-            user accounts, media uploads, and community features. It stands as a
-            showcase of my growth as a developer and my ability to bring a
-            concept to life.
-          </p>
-        </div>
+        <div className="flex flex-col gap-10 w-full h-[100vh] justify-center">
+          <div className="flex gap-5 justify-start items-center">
+            <h1 className={`text-9xl text-[#EEEEEE] ${libre.className}`}>04</h1>
+            <h1 className={`text-9xl text-[#EEEEEE]`}>The Learned</h1>
+          </div>
 
-        <div className="flex flex-col flex-1/3 gap-3">
-          <h2 className="text-2xl font-bold">Reflection / Learnings</h2>
-          <p className="text-justify">
-            This project taught me how to balance both front-end and back-end
-            development in a full-stack environment. I learned the value of
-            testing, debugging, and iterating, and it showed me that persistence
-            pays off when tackling technical obstacles. If I were to continue
-            developing Woofles, I’d explore adding friend connections, event
-            RSVPs, and a mobile-friendly redesign.
-          </p>
+          <div className="flex flex-col gap-3">
+            <p className="text-justify text-4xl font-semibold">
+              This project taught me how to balance both front-end and back-end
+              development in a full-stack environment.
+            </p>
+            <p className="text-justify text-2xl">
+              I learned the value of testing, debugging, and iterating, and it
+              showed me that persistence pays off when tackling technical
+              obstacles. If I were to continue developing Woofles, I’d explore
+              adding friend connections, event RSVPs, and a more mobile-friendly
+              redesign.
+            </p>
+          </div>
         </div>
       </div>
 
-      <div className="min-h-screen flex flex-col gap-10 items-center justify-center bg-transparent px-4 py-10">
-        <div className="flex flex-col gap-1 w-full px-20">
-          <h3 className={`text-xl text-[#EEEEEE] ${libre.className}`}>
-            Pinoy Travels & Tourism
-          </h3>
-          <h2 className="text-2xl font-bold">
-            Redesigning the Website for a Travel Agency
-          </h2>
-        </div>
+      <div className="w-full">
+        <TabletScroll titleComponent={tabletTitle}>
+          {tabletContent}
+        </TabletScroll>
+      </div>
 
-        <div className="flex flex-row w-full gap-30 justify-between px-20">
-          <div className="flex flex-col flex-2/3 gap-10 w-full justify-between items-center">
-            <div className="flex flex-col gap-3">
-              <h2 className="text-2xl font-bold">What</h2>
-              <p className="text-justify">
-                My team and I redesigned the website for Pinoy Travels &
-                Tourism, a travel agency. We reached out to the company and
-                offered a complete website remodel to practice the theory
-                lessons we’ve learned to improve its design, user experience,
-                and functionality.
-              </p>
-            </div>
-
-            <div className="flex flex-col gap-3">
-              <h2 className="text-2xl font-bold">Why</h2>
-              <p className="text-justify">
-                We saw the agency’s current website and wanted to enhance the
-                visual appeal, usability, and overall performance of it to
-                ensure that their users can have a smoother and more
-                user-friendly experience.
-              </p>
-            </div>
-
-            <div className="flex flex-col gap-3">
-              <h2 className="text-2xl font-bold">How</h2>
-              <p className="text-justify">
-                During this project, the team and I maintained constant
-                communication with the company so that the redesign can match
-                their needs while maintaining their brand identity. We also
-                looked for their feedback to ensure that the final product was
-                up to their standards. And we split the work evenly to
-                streamline efficiency and ensure a balanced workload.
-              </p>
-            </div>
+      <div className="flex flex-col gap-50 w-[90vw]">
+        <div className="flex flex-col gap-10 w-full h-[100vh] justify-center">
+          <div className="flex gap-5 justify-start items-center">
+            <h1 className={`text-9xl text-[#EEEEEE] ${libre.className}`}>01</h1>
+            <h1 className={`text-9xl text-[#EEEEEE]`}>The Problem</h1>
           </div>
 
-          <div className="flex flex-1/2 justify-center">
-            <div>
-              <div className="relative mx-auto border-gray-800 dark:border-gray-800 bg-gray-800 border-[16px] rounded-t-xl h-[170px] w-[300px] md:h-[400px] md:w-[600px]">
-                <div className="rounded-xl overflow-hidden h-[140px] md:h-[368px]">
-                  <img
-                    src={currentPinoyTnTImage}
-                    className="h-[140px] md:h-[368px] w-full rounded-xl object-cover object-top"
-                    alt="Pinoy TnT preview"
-                  />
-                </div>
-              </div>
-              <div className="relative mx-auto bg-gray-900 dark:bg-gray-700 rounded-b-xl h-[24px] max-w-[301px] md:h-[42px] md:max-w-[600px]"></div>
-              <div className="relative mx-auto bg-gray-800 rounded-b-xl h-[30px] max-w-[83px] md:h-[50px] md:max-w-[142px]"></div>
+          <div className="flex flex-col gap-3">
+            <p className="text-justify text-4xl font-semibold">
+              The agency's website was outdated and didn't reflect its
+              credibility or cater to modern user expectations.
+            </p>
+            <p className="text-justify text-2xl">
+              Pinoy Travels & Tourism's website lacked strong visual hierarchy,
+              consistent branding, and intuitive navigation. It felt dated and
+              was difficult for users to explore services or make inquiries
+              smoothly.
+            </p>
+          </div>
+        </div>
+
+        <div className="flex flex-col gap-10 w-full h-[100vh] justify-center">
+          <div className="flex gap-5 justify-start items-center">
+            <h1 className={`text-9xl text-[#EEEEEE] ${libre.className}`}>02</h1>
+            <h1 className={`text-9xl text-[#EEEEEE]`}>The Creative</h1>
+          </div>
+
+          <div className="flex flex-col gap-3">
+            <p className="text-justify text-4xl font-semibold">
+              The company wanted a clean and travel-inspired redesign that
+              captures the spirit of exploration and trust.
+            </p>
+            <p className="text-justify text-2xl">
+              Our goal was to modernize the brand's online presence by
+              introducing a more welcoming visual direction. The redesign
+              prioritized readability, consistency, and visual flow to create a
+              sense of familiarity.
+            </p>
+          </div>
+
+          <div className="flex justify-evenly items-center mt-10">
+            <img
+              src="/assets/images/pinoyTnT/pinoyTnTColorScheme.png"
+              className="w-3xl rounded-2xl"
+            />
+            <div className="flex flex-col items-center">
+              <p className={`text-7xl font-bold ${league.className}`}>League</p>
+              <p className={`text-9xl ${league.className}`}>Spartan</p>
             </div>
+          </div>
+        </div>
+
+        <div className="flex flex-col gap-10 w-full h-[100vh] justify-center">
+          <div className="flex gap-5 justify-start items-center">
+            <h1 className={`text-9xl text-[#EEEEEE] ${libre.className}`}>03</h1>
+            <h1 className={`text-9xl text-[#EEEEEE]`}>The Technical</h1>
+          </div>
+
+          <div className="flex flex-col gap-3">
+            <p className="text-justify text-4xl font-semibold">
+              We worked closely with the company to ensure the website
+              maintained their brand identity, using effective communication and
+              collaborative design tools.
+            </p>
+            <p className="text-justify text-2xl">
+              We collected feedback to align our technical decisions with their
+              goals, streamlining content structure, improved responsiveness
+              across devices, and implemented cleaner navigation flows. Work was
+              divided evenly within the team to ensure consistency and efficient
+              progress from design to deployment.
+            </p>
+          </div>
+
+          <div className="flex flex-col justify-evenly items-center mt-10">
+            <img
+              src="/assets/images/pinoyTnT/pinoyTnTDesComm.png"
+              className="w-full"
+            />
+          </div>
+        </div>
+
+        <div className="flex flex-col gap-10 w-full h-[100vh] justify-center">
+          <div className="flex gap-5 justify-start items-center">
+            <h1 className={`text-9xl text-[#EEEEEE] ${libre.className}`}>04</h1>
+            <h1 className={`text-9xl text-[#EEEEEE]`}>The Learned</h1>
+          </div>
+
+          <div className="flex flex-col gap-3">
+            <p className="text-justify text-4xl font-semibold">
+              The project strengthened my ability to translate client feedback
+              into clear design and technical outcomes.
+            </p>
+            <p className="text-justify text-2xl">
+              I learned the importance of structured communication, consistent
+              documentation, and balancing creativity with usability. This
+              experience also improved how I manage teamwork dynamics and adapt
+              designs to meet both aesthetic and functional needs.
+            </p>
           </div>
         </div>
       </div>

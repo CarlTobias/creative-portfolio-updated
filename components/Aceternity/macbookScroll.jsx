@@ -23,6 +23,8 @@ import { IconWorld } from "@tabler/icons-react";
 import { IconCommand } from "@tabler/icons-react";
 import { IconCaretLeftFilled } from "@tabler/icons-react";
 import { IconCaretDownFilled } from "@tabler/icons-react";
+import { pacifico } from "@/app/fonts";
+
 
 export const MacbookScroll = ({ src, showGradient, title, badge }) => {
   const ref = useRef(null);
@@ -68,7 +70,9 @@ export const MacbookScroll = ({ src, showGradient, title, badge }) => {
       >
         {title || (
           <span>
-            Woofles <br /> A Pet Social Media Platform.
+            <span className={`${pacifico.className} text-7xl`}>Woofles</span>
+            <br />
+            <br /> A Social Media Platform for Pets.
           </span>
         )}
       </motion.h2>

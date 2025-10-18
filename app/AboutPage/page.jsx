@@ -1,5 +1,4 @@
 "use client";
-import { fira } from "@/app/fonts";
 import { ColourfulText } from "@/components/Aceternity/colorfulText";
 import {
   DraggableCardBody,
