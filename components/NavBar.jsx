@@ -7,7 +7,7 @@ const NavBar = () => {
   const navItems = [
     { name: "About", link: "/AboutPage" },
     { name: "Portfolio", link: "/PortfolioPage" },
-    { name: "CV", link: "/downloadables/Carl Tobias - CV.pdf" },
+    { name: "CV", link: "/assets/downloadables/Carl Tobias - CV.pdf" },
   ];
 
   return (

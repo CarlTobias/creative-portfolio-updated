@@ -4,6 +4,7 @@ import {
   DraggableCardBody,
   DraggableCardContainer,
 } from "@/components/Aceternity/draggableCard";
+import { Carousel } from "@/components/Aceternity/carousel";
 import Image from "next/image";
 
 export default function About() {
@@ -27,6 +28,30 @@ export default function About() {
       image: "/assets/images/me/me4.jpg",
       className:
         "absolute left-[55%] md:top-59 lg:top-53 xl:top-68 md:left-[65%] lg:left-[68%] xl:left-[67%] rotate-[4deg]",
+    },
+  ];
+
+  const slideData = [
+    {
+      src: "/assets/images/photography/image1.jpg",
+    },
+    {
+      src: "/assets/images/photography/image2.jpg",
+    },
+    {
+      src: "/assets/images/photography/image3.jpg",
+    },
+    {
+      src: "/assets/images/photography/image4.jpg",
+    },
+    {
+      src: "/assets/images/photography/image5.jpg",
+    },
+    {
+      src: "/assets/images/photography/image6.jpg",
+    },
+    {
+      src: "/assets/images/photography/image7.jpg",
     },
   ];
 
@@ -67,16 +92,22 @@ export default function About() {
 
           <div className="flex flex-4/5">
             <p className="md:text-2xl lg:text-4xl xl:text-5xl font-light text-justify">
-              My name is <span className="md:text-4xl lg:text-5xl xl:text-6xl font-bold">Carl Tobias</span>. I bring
-              ideas to life through thoughtful design and interactive
+              My name is{" "}
+              <span className="md:text-4xl lg:text-5xl xl:text-6xl font-bold">
+                Carl Tobias
+              </span>
+              . I bring ideas to life through thoughtful design and interactive
               experiences. From crafting intuitive interfaces to building
               immersive games, I create work that blends creativity, function,
               and a touch of playfulness.
             </p>
           </div>
         </div>
-        <div className="flex flex-row w-full h-dvh items-center p-10">
-          Creative Projects like video edits and photographs
+
+        <div className="h-[100vh]">
+          <div className="flex items-center relative overflow-hidden w-full h-full">
+            <Carousel slides={slideData} />
+          </div>
         </div>
       </div>
     </main>
