@@ -12,7 +12,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark">
       <body className={`text-[#EEEEEE] ${inter.className} antialiased`}>
         <div className="min-h-screen flex flex-col">
           <NavBar />

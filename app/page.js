@@ -11,20 +11,20 @@ import {
 } from "react-icons/gr";
 
 export default function Home() {
-  // useEffect(() => {
-  //   const html = document.documentElement;
-  //   const body = document.body;
-  //   const originalHtmlBg = html.style.background;
-  //   const originalBodyBg = body.style.background;
+  useEffect(() => {
+    const html = document.documentElement;
+    const body = document.body;
+    const originalHtmlBg = html.style.background;
+    const originalBodyBg = body.style.background;
 
-  //   html.style.background = "transparent";
-  //   body.style.background = "transparent";
+    html.style.background = "transparent";
+    body.style.background = "transparent";
 
-  //   return () => {
-  //     html.style.background = originalHtmlBg;
-  //     body.style.background = originalBodyBg;
-  //   };
-  // }, []);
+    return () => {
+      html.style.background = originalHtmlBg;
+      body.style.background = originalBodyBg;
+    };
+  }, []);
   
 
   return (
