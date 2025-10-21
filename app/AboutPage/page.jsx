@@ -1,4 +1,5 @@
 "use client";
+import { useState } from "react";
 import { ColourfulText } from "@/components/Aceternity/colorfulText";
 import {
   DraggableCardBody,
@@ -6,8 +7,12 @@ import {
 } from "@/components/Aceternity/draggableCard";
 import { Carousel } from "@/components/Aceternity/carousel";
 import Image from "next/image";
+import { libre } from "../fonts";
 
 export default function About() {
+  const [showDragIndicator, setShowDragIndicator] = useState(true);
+  const [isFading, setIsFading] = useState(false);
+
   const items = [
     {
       image: "/assets/images/me/me.jpeg",
@@ -55,8 +60,21 @@ export default function About() {
     },
   ];
 
+  const handleIndicatorClick = () => {
+    if (showDragIndicator && !isFading) {
+      setIsFading(true);
+      setTimeout(() => {
+        setShowDragIndicator(false);
+        setIsFading(false);
+      }, 300);
+    }
+  };
+
   return (
-    <main className="flex flex-col h-full overflow-y-auto">
+    <main
+      className="flex flex-col h-full overflow-y-auto"
+      onClick={handleIndicatorClick}
+    >
       <div className="relative w-full h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute z-0 flex flex-col gap-3 w-[75vw] text-left">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold opacity-90">
@@ -82,30 +100,61 @@ export default function About() {
             </DraggableCardBody>
           ))}
         </DraggableCardContainer>
+
+        {showDragIndicator && (
+          <div
+            className={`absolute md:bottom-35 md:left-15 xl:bottom-15 xl:left-20 z-20 cursor-pointer transition-opacity duration-300 ${
+              isFading ? "opacity-0" : "opacity-70"
+            }`}
+          >
+            <Image
+              src="/assets/images/dragMe.png"
+              alt="Drag Me!"
+              width={100}
+              height={100}
+              className="hover:opacity-100 transition-opacity duration-200 md:-rotate-15 xl:-rotate-12"
+            />
+          </div>
+        )}
       </div>
 
       <div className="flex flex-col w-full h-full">
         <div className="flex flex-row w-full h-dvh items-center p-10 gap-10">
-          <div className="bg-blue-900 h-full w-md rounded-lg flex justify-center items-center">
-            Fun vertical video doing silly things
+          <div className="h-full w-md rounded-lg flex justify-center items-center">
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="max-h-full max-w-full object-contain rounded-lg"
+              style={{ maxHeight: "80vh" }}
+            >
+              <source
+                src="/assets/images/me/portfolioClip.mp4"
+                type="video/mp4"
+              />
+              Your browser does not support the video tag.
+            </video>
           </div>
 
           <div className="flex flex-4/5">
             <p className="md:text-2xl lg:text-4xl xl:text-5xl font-light text-justify">
-              My name is{" "}
-              <span className="md:text-4xl lg:text-5xl xl:text-6xl font-bold">
-                Carl Tobias
-              </span>
-              . I bring ideas to life through thoughtful design and interactive
-              experiences. From crafting intuitive interfaces to building
-              immersive games, I create work that blends creativity, function,
-              and a touch of playfulness.
+              I like making things that people can feel, whether that's a smooth
+              interaction, a fun little animation, or a game that pulls you in.
+              Design, for me, is part creativity, part curiosity, and a little
+              bit of chaos in between.
             </p>
           </div>
         </div>
 
-        <div className="h-[100vh]">
-          <div className="flex items-center relative overflow-hidden w-full h-full">
+        <div className="flex flex-col h-[100vh] justify-center items-center gap-10">
+          <div className="flex flex-col justify-center items-center">
+            <h1 className={`text-3xl font-bold ${libre.className}`}>
+              Photography
+            </h1>
+            <p className="text-2xl">A glimpse through my lens.</p>
+          </div>
+          <div className="flex items-center relative overflow-hidden w-full">
             <Carousel slides={slideData} />
           </div>
         </div>
