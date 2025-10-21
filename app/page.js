@@ -11,22 +11,6 @@ import {
 } from "react-icons/gr";
 
 export default function Home() {
-  useEffect(() => {
-    const html = document.documentElement;
-    const body = document.body;
-    const originalHtmlBg = html.style.background;
-    const originalBodyBg = body.style.background;
-
-    html.style.background = "transparent";
-    body.style.background = "transparent";
-
-    return () => {
-      html.style.background = originalHtmlBg;
-      body.style.background = originalBodyBg;
-    };
-  }, []);
-  
-
   return (
     <div className="relative w-full h-screen flex flex-col overflow-hidden bg-transparent">
       <div className="absolute inset-0 -z-10">

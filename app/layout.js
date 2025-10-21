@@ -13,13 +13,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`text-[#EEEEEE] ${inter.className} antialiased`}
-        style={{
-          background: "linear-gradient(to bottom, #0a0a0a, #262626)",
-        }}
-      >
-        <div className="min-h-screen flex flex-col">
+      <body className={`text-[#EEEEEE] ${inter.className} antialiased`}>
+        <div className="fixed inset-0 -z-50 bg-gradient-to-b from-neutral-950 to-neutral-800" />
+
+        <div className="min-h-screen flex flex-col relative z-10">
           <NavBar />
           <main className="flex-1">{children}</main>
         </div>
@@ -27,4 +24,3 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
-

@@ -1,15 +1,11 @@
 @import "tailwindcss";
 
-html,
-body {
-  @apply bg-gradient-to-b from-white to-neutral-100 dark:from-neutral-950 dark:to-neutral-800;
+html, body {
+  color: #EEEEEE;
+  margin: 0;
+  padding: 0;
 }
 
 html {
   scroll-behavior: smooth;
 }
-
-body.home-page {
-  background: transparent !important;
-}
-

@@ -153,7 +153,7 @@ export const DraggableCardBody = ({ className, children }) => {
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       className={cn(
-        "relative overflow-hidden rounded-md bg-neutral-100 shadow-2xl transform-3d dark:bg-neutral-900",
+        "relative overflow-hidden rounded-md bg-neutral-900 shadow-2xl transform-3d",
         "min-h-64 w-48 p-4",
         "md:min-h-72 md:w-56 md:p-5",
         "lg:min-h-80 lg:w-60 lg:p-6",
