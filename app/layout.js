@@ -5,6 +5,9 @@ import "./globals.css";
 export const metadata = {
   title: "Carl Tobias - Creative Portfolio",
   description: "",
+  icons: {
+    icon: [{ url: "/assets/images/LogoCarl.png", type: "image/png" }],
+  },
 };
 
 export default function RootLayout({ children }) {
